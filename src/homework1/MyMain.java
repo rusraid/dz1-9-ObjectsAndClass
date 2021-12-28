@@ -7,16 +7,26 @@ public class MyMain {
         Author gogol = new Author("Nikolay", " Gogol");
 
 
-        Book TheMasterAndMargarita = new Book(bulgakov, "Picador", 1997);
-        Book DeadSouls = new Book(gogol, "Academia", 1957);
+        Book theMasterAndMargarita = new Book(bulgakov, "Picador", 1997);
+        Book deadSouls = new Book(gogol, "Academia", 1957);
+        Book deadSouls2 = new Book(gogol, "Academia", 1957);
 
-        System.out.println(bulgakov.getAuthorName() + bulgakov.getAuthorSurname() + " " + TheMasterAndMargarita.getPublisherName() + " " + TheMasterAndMargarita.getPublishingYear());
-        System.out.println(gogol.getAuthorName() + gogol.getAuthorSurname() + " " + DeadSouls.getPublisherName() + " " + DeadSouls.getPublishingYear());
+//        System.out.println(bulgakov.getAuthorName() + bulgakov.getAuthorSurname() + " " + theMasterAndMargarita.getPublisherName() + " " + theMasterAndMargarita.getPublishingYear());
+//        System.out.println(gogol.getAuthorName() + gogol.getAuthorSurname() + " " + deadSouls.getPublisherName() + " " + deadSouls.getPublishingYear());
 
-        System.out.println("DeadSouls.getPublishingYear() = " + DeadSouls.getPublishingYear());
+        System.out.println(theMasterAndMargarita);
+        System.out.println(deadSouls);
 
-        System.out.println("Меняем год выпуска книги");
-        DeadSouls.setPublishingYear(2020);
-        System.out.println("DeadSouls.getPublishingYear() = " + DeadSouls.getPublishingYear());
+//        System.out.println("deadSouls.getPublishingYear() = " + deadSouls.getPublishingYear());
+//        System.out.println("Меняем год выпуска книги");
+//        deadSouls.setPublishingYear(2020);
+//        System.out.println("deadSouls.getPublishingYear() = " + deadSouls.getPublishingYear());
+
+        System.out.println("Сравнение копий книг через equals: " + deadSouls.equals(deadSouls2));
+        System.out.println("Сравнение копий книг через hashCode: " + (deadSouls.hashCode() == deadSouls2.hashCode()));
+        System.out.println("Сравнение разных книг через equals: " + deadSouls.equals(theMasterAndMargarita));
+        System.out.println("Сравнение разных книг через hashCode: " + (deadSouls.hashCode() == theMasterAndMargarita.hashCode()));
+
+
     }
 }
